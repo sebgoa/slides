@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: spartakus
+  name: spartakus
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: spartakus
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: spartakus
+    spec:
+      containers:
+      - args:
+        - volunteer
+        - --cluster-id=CABIN-DA164CFB-247E-4765-BAC7-A3113DDF0A9E
+        image: gcr.io/google_containers/spartakus-amd64:v1.0.0
+        imagePullPolicy: IfNotPresent
+        name: spartakus

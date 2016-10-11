@@ -1,0 +1,7 @@
+metadata:
+  name: pin-guin.k8s.linuxcon.com
+apiVersion: extensions/v1beta1
+kind: ThirdPartyResource
+description: "A crazy pinguin at Linuxcon"
+versions:
+- name: v1

@@ -1,0 +1,6 @@
+apiVersion: k8s.linuxcon.com/v1
+kind: PinGuin
+metadata:
+  name: crazy
+  labels:
+    linuxcon: rocks

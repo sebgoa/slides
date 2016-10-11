@@ -1,0 +1,10 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1alpha1
+metadata:
+  namespace: default
+  name: admin
+rules:
+  - apiGroups: [""] # The API group "" indicates the default API Group.
+    resources: [""]
+    verbs: [""]
+    nonResourceURLs: []
